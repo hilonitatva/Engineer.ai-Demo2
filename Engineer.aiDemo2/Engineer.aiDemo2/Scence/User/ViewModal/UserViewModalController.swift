@@ -20,7 +20,7 @@ class UserViewModalController {
     
     //MARK:- Call API Method -
     func callUserAPI() {
-        let showIndicator = viewController.userArray.count ?? 0 > 0 ? false : true
+        let showIndicator = viewController.userArray.count > 0 ? false : true
           UserInteractor.callUserAPI(showIndicator: showIndicator, offset: viewController.offset, limit: limit, completionSuccess: { (response) in
             do {
                 let user = try? JSONDecoder().decode(UserDetail.self, from: response)

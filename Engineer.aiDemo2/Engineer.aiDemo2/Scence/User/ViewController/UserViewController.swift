@@ -69,9 +69,11 @@ extension UserViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == self.userArray.count - 1 && hasMore {
+        if indexPath.section == self.userArray.count - 1 && hasMore {
+            if offset != self.userArray.count {
                 self.offset = self.userArray.count
                 self.viewModal.callUserAPI()
+            }
         }
     }
     
