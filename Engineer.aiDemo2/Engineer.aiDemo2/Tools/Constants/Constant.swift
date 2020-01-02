@@ -9,3 +9,4 @@
 import Foundation
 
 let Environment = "https://sd2-hiring.herokuapp.com/api/"
+let limit = 10

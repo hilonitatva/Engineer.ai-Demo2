@@ -13,7 +13,7 @@
 		7BA9C3C423BE178100D92985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA9C3C323BE178100D92985 /* Assets.xcassets */; };
 		7BA9C3C723BE178100D92985 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA9C3C523BE178100D92985 /* LaunchScreen.storyboard */; };
 		7BA9C3DC23BE1AD200D92985 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3DB23BE1AD200D92985 /* UserViewController.swift */; };
-		7BA9C3E023BE1AEF00D92985 /* UserViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3DF23BE1AEF00D92985 /* UserViewModal.swift */; };
+		7BA9C3E023BE1AEF00D92985 /* UserViewModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3DF23BE1AEF00D92985 /* UserViewModalController.swift */; };
 		7BA9C3E223BE1AFD00D92985 /* UserViewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3E123BE1AFD00D92985 /* UserViewNavigator.swift */; };
 		7BA9C3E423BE1B0600D92985 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3E323BE1B0600D92985 /* UserInteractor.swift */; };
 		7BA9C3E623BE1B6200D92985 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3E523BE1B6200D92985 /* ImageCollectionViewCell.swift */; };
@@ -21,6 +21,8 @@
 		7BA9C3EA23BE1C2900D92985 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3E923BE1C2900D92985 /* APIRouter.swift */; };
 		7BA9C3EC23BE1C3100D92985 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3EB23BE1C3100D92985 /* APIManager.swift */; };
 		7BA9C3EE23BE1C4600D92985 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3ED23BE1C4600D92985 /* Constant.swift */; };
+		7BA9C3F023BE208800D92985 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3EF23BE208800D92985 /* User.swift */; };
+		7BA9C3F323BE2A2600D92985 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9C3F223BE2A2600D92985 /* UIImage + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +36,7 @@
 		7BA9C3C623BE178100D92985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BA9C3C823BE178100D92985 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA9C3DB23BE1AD200D92985 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		7BA9C3DF23BE1AEF00D92985 /* UserViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModal.swift; sourceTree = "<group>"; };
+		7BA9C3DF23BE1AEF00D92985 /* UserViewModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModalController.swift; sourceTree = "<group>"; };
 		7BA9C3E123BE1AFD00D92985 /* UserViewNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewNavigator.swift; sourceTree = "<group>"; };
 		7BA9C3E323BE1B0600D92985 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		7BA9C3E523BE1B6200D92985 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		7BA9C3E923BE1C2900D92985 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		7BA9C3EB23BE1C3100D92985 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7BA9C3ED23BE1C4600D92985 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		7BA9C3EF23BE208800D92985 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7BA9C3F223BE2A2600D92985 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		7BA9C3CF23BE183F00D92985 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				7BA9C3EF23BE208800D92985 /* User.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 		7BA9C3D223BE185D00D92985 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7BA9C3F123BE2A1400D92985 /* Extension */,
 				7BA9C3D423BE187500D92985 /* Constants */,
 				7BA9C3D323BE187500D92985 /* Localization */,
 				7BA9C3C323BE178100D92985 /* Assets.xcassets */,
@@ -191,7 +197,7 @@
 		7BA9C3D923BE1AAB00D92985 /* ViewModal */ = {
 			isa = PBXGroup;
 			children = (
-				7BA9C3DF23BE1AEF00D92985 /* UserViewModal.swift */,
+				7BA9C3DF23BE1AEF00D92985 /* UserViewModalController.swift */,
 			);
 			path = ViewModal;
 			sourceTree = "<group>";
@@ -206,6 +212,14 @@
 				7BA9C3D723BE1AAB00D92985 /* ViewNavigator */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		7BA9C3F123BE2A1400D92985 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7BA9C3F223BE2A2600D92985 /* UIImage + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E08A419A557501C7543A77BE /* Frameworks */ = {
@@ -336,11 +350,13 @@
 				7BA9C3BD23BE178100D92985 /* AppDelegate.swift in Sources */,
 				7BA9C3EC23BE1C3100D92985 /* APIManager.swift in Sources */,
 				7BA9C3E423BE1B0600D92985 /* UserInteractor.swift in Sources */,
+				7BA9C3F323BE2A2600D92985 /* UIImage + Extension.swift in Sources */,
 				7BA9C3DC23BE1AD200D92985 /* UserViewController.swift in Sources */,
 				7BA9C3EA23BE1C2900D92985 /* APIRouter.swift in Sources */,
 				7BA9C3EE23BE1C4600D92985 /* Constant.swift in Sources */,
-				7BA9C3E023BE1AEF00D92985 /* UserViewModal.swift in Sources */,
+				7BA9C3E023BE1AEF00D92985 /* UserViewModalController.swift in Sources */,
 				7BA9C3E223BE1AFD00D92985 /* UserViewNavigator.swift in Sources */,
+				7BA9C3F023BE208800D92985 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class UserInteractor {
+    static func callUserAPI(showIndicator: Bool,offset: Int,limit: Int,completionSuccess: @escaping ((Data) -> ()),failure: @escaping ((String)->())) {
+        APIManger.callRequest(showIndicator: showIndicator, APIRouter.getUserList(offset, limit), completionSuccess: { (response) in
+            completionSuccess(response)
+        }) { (error) in
+            failure(error)
+        }
+    }
+}

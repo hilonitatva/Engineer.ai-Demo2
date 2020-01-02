@@ -21,15 +21,16 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zRN-78-mPD">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="llT-GD-XBF">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="50" height="70"/>
                                     <size key="footerReferenceSize" width="50" height="11"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="jho-AM-5tk" customClass="ImageCollectionViewCell" customModule="Engineer_aiDemo2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="50" height="50"/>
+                                        <rect key="frame" x="10" y="70" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -55,7 +56,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-42-wXV">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-42-wXV" customClass="LayoutView" customModule="Engineer_aiDemo2" customModuleProvider="target">
                                             <rect key="frame" x="10" y="10" width="50" height="50"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-y6-zAF">
@@ -71,6 +72,11 @@
                                                 <constraint firstItem="GOd-y6-zAF" firstAttribute="leading" secondItem="pbx-42-wXV" secondAttribute="leading" id="jsu-Dc-eFs"/>
                                                 <constraint firstAttribute="trailing" secondItem="GOd-y6-zAF" secondAttribute="trailing" id="roU-R9-MLu"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arm-nV-qvZ">
                                             <rect key="frame" x="70" y="24.5" width="326" height="21"/>
@@ -88,15 +94,15 @@
                                     </constraints>
                                     <connections>
                                         <outlet property="userNameLabel" destination="arm-nV-qvZ" id="VDQ-9X-tnF"/>
-                                        <outlet property="userProfileImageView" destination="pbx-42-wXV" id="F4q-Pg-3CV"/>
+                                        <outlet property="userProfileImageView" destination="GOd-y6-zAF" id="yy4-9u-NfW"/>
                                     </connections>
                                 </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GZl-gC-2eN">
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterCollectionReusableView" id="GZl-gC-2eN" customClass="FooterCollectionReusableView">
                                     <rect key="frame" x="0.0" y="120" width="414" height="11"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5w2-ew-prn">
-                                            <rect key="frame" x="0.0" y="66" width="414" height="1"/>
+                                            <rect key="frame" x="0.0" y="10" width="414" height="1"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="k9m-vn-gUE"/>

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import UIKit
+
+class UserViewNavigator {
+    //MARK:- Variable -
+    var viewController: UserViewController!
+    
+    init(viewController: UserViewController) {
+        self.viewController = viewController
+    }
+    
+}

@@ -16,15 +16,16 @@ class APIManger {
         if showIndicator {
             SVProgressHUD.show()
         }
-        let heasder = ["Content-Type":"application/json"]
+        let header = ["Content-Type":"application/json"]
         
-        Alamofire.request(router.path, method: router.method, parameters: router.parameter, encoding: URLEncoding.default, headers: heasder).responseData { (response) in
+        Alamofire.request(router.path, method: router.method, parameters: router.parameter, encoding: URLEncoding.default, headers: header).responseData { (response) in
             switch response.result {
             case .success:
                 completionSuccess(response.result.value ?? Data())
             case .failure:
                 failure(response.error!.localizedDescription)
             }
+            SVProgressHUD.dismiss()
         }
     }
 }

@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeaderCollectionReusableView: UICollectionReusableView {
-        
-    @IBOutlet weak var userProfileImageView: UIView!
-    @IBOutlet weak var userNameLabel: UILabel!
+    
+    //MARK:- Outlets -
+    @IBOutlet private weak var userProfileImageView: UIImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    
+    //MARK:- Variable -
+    var userDetail: Users! {
+        didSet {
+            self.userProfileImageView.sd_setImage(with: URL(string: userDetail.image!)) { (image, error, type, url) in
+                
+            }
+            userNameLabel.text = userDetail.name
+        }
+    }
 }
