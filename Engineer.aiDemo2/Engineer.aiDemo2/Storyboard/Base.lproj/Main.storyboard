@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Engineer_aiDemo2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserViewController" id="BYZ-38-t0r" customClass="UserViewController" customModule="Engineer_aiDemo2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jho-AM-5tk">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="jho-AM-5tk" customClass="ImageCollectionViewCell" customModule="Engineer_aiDemo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="70" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -46,14 +46,17 @@
                                             <constraint firstItem="2tQ-fL-XNY" firstAttribute="leading" secondItem="jho-AM-5tk" secondAttribute="leading" id="dBF-Pt-0RZ"/>
                                             <constraint firstAttribute="trailing" secondItem="2tQ-fL-XNY" secondAttribute="trailing" id="dn9-O6-MRm"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="userImageView" destination="2tQ-fL-XNY" id="d0x-PH-fYw"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rAU-O7-aJI">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCollectionReusableView" id="rAU-O7-aJI" customClass="HeaderCollectionReusableView" customModule="Engineer_aiDemo2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-42-wXV">
-                                            <rect key="frame" x="10" y="13.5" width="50" height="50"/>
+                                            <rect key="frame" x="10" y="10" width="50" height="50"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-y6-zAF">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -70,7 +73,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arm-nV-qvZ">
-                                            <rect key="frame" x="70" y="28" width="326" height="21"/>
+                                            <rect key="frame" x="70" y="24.5" width="326" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -83,6 +86,10 @@
                                         <constraint firstItem="pbx-42-wXV" firstAttribute="leading" secondItem="rAU-O7-aJI" secondAttribute="leading" constant="10" id="fA0-tw-ocR"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="arm-nV-qvZ" secondAttribute="trailing" constant="10" id="myq-MC-9ng"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="userNameLabel" destination="arm-nV-qvZ" id="VDQ-9X-tnF"/>
+                                        <outlet property="userProfileImageView" destination="pbx-42-wXV" id="F4q-Pg-3CV"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GZl-gC-2eN">
                                     <rect key="frame" x="0.0" y="120" width="414" height="11"/>
@@ -102,6 +109,10 @@
                                         <constraint firstAttribute="bottom" secondItem="5w2-ew-prn" secondAttribute="bottom" id="o50-yD-tkL"/>
                                     </constraints>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ozK-Og-5zZ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="twv-cZ-8jv"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,6 +124,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="userDetailCollectionView" destination="zRN-78-mPD" id="OjH-2m-mE2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
