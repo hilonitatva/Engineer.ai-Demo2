@@ -1,0 +1,6 @@
+framework module Pods_Engineer_aiDemo2 {
+  umbrella header "Pods-Engineer.aiDemo2-umbrella.h"
+
+  export *
+  module * { export * }
+}
