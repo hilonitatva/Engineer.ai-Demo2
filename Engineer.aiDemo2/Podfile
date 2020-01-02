@@ -13,4 +13,6 @@ pod 'Alamofire'
 #Indicator
 pod 'SVProgressHUD'
 
+#load Image
+pod 'SDWebImage'
 end
