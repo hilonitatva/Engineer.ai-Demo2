@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: BaseViewController {
 
     //MARK:- Outlets -
     @IBOutlet weak var userDetailCollectionView: UICollectionView!
@@ -17,18 +17,19 @@ class UserViewController: UIViewController {
     lazy var viewModal      : UserViewModalController = UserViewModalController(viewController: self)
     lazy var viewNavigator  : UserViewNavigator       = UserViewNavigator(viewController: self)
     var userArray:[Users] = []
-    var offset: Int = 0
-    var hasMore: Bool = false
+  
     
     //MARK:- Controller Method -
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModal.callUserAPI()
+        self.prepareView()
         // Do any additional setup after loading the view.
     }
     
     //MARK:- View Method -
-    
+    private func prepareView() {
+        viewModal.callUserAPI()
+    }
 
 
 }
@@ -69,11 +70,8 @@ extension UserViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.section == self.userArray.count - 1 && hasMore {
-            if offset != self.userArray.count {
-                self.offset = self.userArray.count
-                self.viewModal.callUserAPI()
-            }
+        if indexPath.section == self.userArray.count - 1 {
+            viewModal.pagination()
         }
     }
     

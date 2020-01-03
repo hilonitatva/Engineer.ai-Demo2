@@ -11,11 +11,8 @@ import Alamofire
 import SVProgressHUD
 
 class APIManger {
-    static func callRequest(showIndicator: Bool = true,_ router: APIRouter,completionSuccess:@escaping ((Data)->()),failure: @escaping ((String)->())) {
+    static func callRequest(_ router: APIRouter,completionSuccess:@escaping ((Data)->()),failure: @escaping ((String)->())) {
         
-        if showIndicator {
-            SVProgressHUD.show()
-        }
         let header = ["Content-Type":"application/json"]
         
         Alamofire.request(router.path, method: router.method, parameters: router.parameter, encoding: URLEncoding.default, headers: header).responseData { (response) in
@@ -25,7 +22,6 @@ class APIManger {
             case .failure:
                 failure(response.error!.localizedDescription)
             }
-            SVProgressHUD.dismiss()
         }
     }
 }
